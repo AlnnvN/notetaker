@@ -14,11 +14,16 @@ body{
 
 .body-div{
     width: 50%;
+    max-width: 50%;
+
     margin: auto;
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 2px black solid; */
+
+    
+    border: 2px black solid;
 }
 
 #divisor{
@@ -91,7 +96,7 @@ body{
     margin-top:20px;
 }
 
-#save-button{
+.btn{
     font-family: var(--font);
     font-size:24px;
     font-weight: lighter;
@@ -108,8 +113,38 @@ body{
 
     transition-duration: 0.4s;
 }
-
-#save-button:hover{
+.btn:hover{
     background-color: #07222f;
     cursor:pointer;
+}
+
+#display-div{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 25px;
+    
+}
+
+.note-div{
+    position: relative;
+    display:block;
+
+
+    min-width: 50%;
+    max-width: 100%;
+
+    background-color:rgb(255, 255, 255);
+    flex:1;
+    
+    text-align: left;
+    word-wrap: break-word;
+
+    padding: 30px;
+    padding-top: 0px;
+    
+    
+}
+
+.note-p{
+    
 }
