@@ -81,6 +81,7 @@ body{
     width: 97%;
     resize: none;
     overflow: hidden;
+    border-bottom: #0a3750 solid 2px;
 
     transition-duration: 0.4s;
 }
@@ -90,7 +91,11 @@ body{
 #text-area:hover{
     background-color: #f8f8f8;
 }
-
+#text-area:focus{
+    outline: none !important;
+    border-color: #b7daff;
+    
+}
 
 #button-div{
     margin-top:20px;
@@ -123,14 +128,14 @@ body{
     grid-template-columns: auto auto;
     grid-auto-rows: auto;
     margin-top: 25px;
-    
-    
 }
 
 .note-div{
-    
-    display:block;
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: column;
 
+    height: 100%;
 
     min-width: 50%;
     max-width: 100%;
@@ -144,7 +149,7 @@ body{
     padding: 30px;
     padding-top: 0px;
     
-    
+    border-bottom: #0a3750 solid 2px;
 }
 
 .display-btn-div{
@@ -152,10 +157,10 @@ body{
     flex-direction: row;
     align-content:flex-start;
     justify-content: space-between;
+    margin-top: 20px;
 }
 
 .display-btn{
-    margin-top: 20px;
     height: 40px;
     font-size: 17px;
     font-weight: normal;
