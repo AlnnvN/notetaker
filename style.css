@@ -9,7 +9,7 @@
 
 body{
     font-family: var(--font);
-    background-color: var(--white1);
+    background-color: var(--white1);  
 }
 
 .body-div{
@@ -30,7 +30,7 @@ body{
 
 .title{
     font-size: 133px;
-    float:left
+    
 }
 
 #t1{
@@ -58,24 +58,31 @@ body{
     height:50px;
 }
 
+
 #input-div{
-    margin-top: 20px;
-    height: 50px;
-}
+    margin-top: 25px;  
+    height: 100px;
 
-form{
-    width:100%;
+    position:relative;
 }
-
-#text-input{
+#text-area{
     font-family: var(--font);
-    font-size:25px;
-    border: #ececec hidden .5px;
+    font-size:20px;
+
     width: 97%;
+
     padding: 10px;
     padding-left: 15px;
-}
+    
+    resize: none;
+    
+    overflow: hidden;
 
-#text-input::placeholder{
+    position:absolute;
+    top:0;
+
+}
+#text-area::placeholder{
     color: #0a38501c;
 }
+
