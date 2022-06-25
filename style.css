@@ -61,28 +61,55 @@ body{
 
 #input-div{
     margin-top: 25px;  
-    height: 100px;
-
+    height: 128px;
     position:relative;
+    margin-bottom: 20px;
 }
 #text-area{
-    font-family: var(--font);
-    font-size:20px;
-
-    width: 97%;
-
-    padding: 10px;
-    padding-left: 15px;
-    
-    resize: none;
-    
-    overflow: hidden;
-
     position:absolute;
     top:0;
+    font-family: var(--font);
+    font-size:20px;
+    padding: 10px;
+    padding-left: 15px;
+    border: hidden;
+    width: 97%;
+    resize: none;
+    overflow: hidden;
 
+    transition-duration: 0.4s;
 }
 #text-area::placeholder{
-    color: #0a38501c;
+    color: #0a38501c;   
+}
+#text-area:hover{
+    background-color: #f8f8f8;
 }
 
+
+#button-div{
+    margin-top:20px;
+}
+
+#save-button{
+    font-family: var(--font);
+    font-size:24px;
+    font-weight: lighter;
+    color: var(--white1);
+    padding: 10px;
+    width: 200px;
+    border: hidden;
+    border-radius: 2%/10%;
+    background-color: #092e41;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition-duration: 0.4s;
+}
+
+#save-button:hover{
+    background-color: #07222f;
+    cursor:pointer;
+}
