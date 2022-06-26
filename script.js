@@ -3,11 +3,18 @@ const saveButton = document.getElementById("save-button");
 const displayDiv = document.getElementById("display-div");
 const body1 = document.getElementsByTagName("body");
 
-
 saveButton.addEventListener('click',()=>{//save button - create new note
-    
-    if(textArea.value != "" && textArea.value[0] != " ")
+
+    let isRepeated = false;//check for repeated texts
+    for (let i = 0; i < displayDiv.children.length; i++) {
+        if(textArea.value === displayDiv.children[i].children[1].innerHTML){
+            isRepeated = true;
+        }
+    }
+
+    if(textArea.value != "" && textArea.value[0] != " " && isRepeated === false)
     createNewNote(textArea.value);
+    textArea.value = ""; //resets text area after input
 })
 
 textArea.addEventListener('keydown', e=>{//auto resize
@@ -23,6 +30,7 @@ textArea.addEventListener('keyup', e=>{//auto resize
 function createNewNote(input){
 
     var noteDiv, buttonDiv;
+    var number = displayDiv.children.length+1;
 
     createNoteDiv();
     createTitle();
@@ -71,14 +79,17 @@ function createNewNote(input){
 
         function showDetails() {
 
+            let n = number;
+
             let modal = document.createElement('div'); //criação do modal (fundo branco)
             modal.id = "modal";
+            modal.className ="bottom-border";
             background1.appendChild(modal);
 
             let detailsTitle = document.createElement('h3'); //criação do titulo da nota detalhada
             detailsTitle.id="note-title";
             modal.appendChild(detailsTitle);
-            detailsTitle.innerHTML = innerHTML = "Note " + displayDiv.children.length;
+            detailsTitle.innerHTML = innerHTML = "Note " + n;
 
             let pDetails = document.createElement('p'); //criação do paragrafo da nota detalhada
             pDetails.innerHTML = input;
@@ -108,13 +119,13 @@ function createNewNote(input){
 
     function createTitle() {
         let title = document.createElement("h3"); //new title
-        title.innerHTML = "Note " + displayDiv.children.length; //changes title name (dynamic number)
+        title.innerHTML = "Note " + number; //changes title name (dynamic number)
         noteDiv.appendChild(title);
     }
 
     function createNoteDiv() {
         noteDiv = document.createElement("div"); //creates note div
-        noteDiv.classList.add("note-div"); //classes note div
+        noteDiv.className = "note-div bottom-border"; //classes note div
         displayDiv.appendChild(noteDiv); //appends note div to display div
     }
 }

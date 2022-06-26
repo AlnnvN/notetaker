@@ -30,7 +30,7 @@ body{
     margin-top: 25px;
     width: 25%;
     background-color: var(--red-grey);
-    height: 2px;
+    height: 4px;
 }
 
 .title{
@@ -77,19 +77,14 @@ body{
     font-size:20px;
     padding: 10px;
     padding-left: 15px;
-    border: hidden;
     width: 97%;
     resize: none;
     overflow: hidden;
-    border-bottom: #0a3750 solid 2px;
-    transition-duration: 0.4s;
 }
 #text-area::placeholder{
     color: #0a38501c;   
 }
-#text-area:hover{
-    background-color: #f8f8f8;
-}
+
 #text-area:focus{
     outline: none !important;
     border-color: #b7daff;
@@ -116,6 +111,7 @@ body{
     align-items: center;
 
     transition-duration: 0.4s;
+    margin-left: 20px;
 }
 .btn:hover{
     background-color: #07222f;
@@ -141,7 +137,7 @@ body{
     word-wrap: break-word;
     padding: 30px;
     padding-top: 0px;
-    border-bottom: #0a3750 solid 2px;
+
 }
 
 .display-btn-div{
@@ -193,14 +189,13 @@ body{
     max-height: 90%;
     width: 50%;
     max-width: 50%;
-    background-color: white;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 20px;
     margin-top: 20px;
     word-wrap: break-word;
-
     overflow-y: auto;
+
 }
 
 #modal>p{
@@ -215,4 +210,16 @@ body{
 #exit-button{
    margin-top:20px;
    margin-bottom: 20px;
+}
+
+.bottom-border{
+    background-color: white;
+    border: hidden;
+    border-bottom: #0a3750 solid 4px;
+    transition-duration: 0.4s;
+}
+
+.bottom-border:hover{
+    background-color: #ebeaf3;
+    border-color: #b7daff;
 }
