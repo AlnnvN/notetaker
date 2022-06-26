@@ -44,22 +44,50 @@ function createNewNote(input){
     }
 
     function createDetailButton() {
-        let detailBtn = document.createElement("button");
+        var background1;
+
+        let detailBtn = document.createElement("button"); //cria o botão principal nas notas
         detailBtn.className = "detail-button display-btn btn";
         detailBtn.appendChild(document.createTextNode("View Detail"));
         buttonDiv.appendChild(detailBtn);
 
-        detailBtn.addEventListener('click', () => {
-            showBackground();
-            showDetails();
+        detailBtn.addEventListener('click', () => { //função do botão de detalhes
+            showBackground();//função para criar fundo embaçado
+            showDetails();//função para criar nota detalhada
+            showExitBtn();//função para criar botão de saída
         });
 
+        function showExitBtn(){
+            let exitButton = document.createElement('button'); //criação do botão de saída da nota detalhada
+            exitButton.id = "exit-button";
+            exitButton.classList.add('btn');
+            exitButton.appendChild(document.createTextNode('Voltar'));
+            background1.appendChild(exitButton);
+
+            exitButton.addEventListener('click',()=>{ //função de saída
+                background1.remove(); //destroi parent (background)
+            })
+        }
+
         function showDetails() {
+
+            let modal = document.createElement('div'); //criação do modal (fundo branco)
+            modal.id = "modal";
+            background1.appendChild(modal);
+
+            let detailsTitle = document.createElement('h3'); //criação do titulo da nota detalhada
+            detailsTitle.id="note-title";
+            modal.appendChild(detailsTitle);
+            detailsTitle.innerHTML = innerHTML = "Note " + displayDiv.children.length;
+
+            let pDetails = document.createElement('p'); //criação do paragrafo da nota detalhada
+            pDetails.innerHTML = input;
+            modal.appendChild(pDetails);
 
         }
 
         function showBackground() {
-            let background1 = document.createElement("div");
+            background1 = document.createElement("div");
             background1.id = "modal-div";
             document.body.appendChild(background1);
             console.log("working");
@@ -80,7 +108,6 @@ function createNewNote(input){
 
     function createTitle() {
         let title = document.createElement("h3"); //new title
-        title.classList.add("note-title"); //classes title
         title.innerHTML = "Note " + displayDiv.children.length; //changes title name (dynamic number)
         noteDiv.appendChild(title);
     }
@@ -91,8 +118,6 @@ function createNewNote(input){
         displayDiv.appendChild(noteDiv); //appends note div to display div
     }
 }
-
-
 
 function autoResize(){
     

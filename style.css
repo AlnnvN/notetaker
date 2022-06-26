@@ -181,13 +181,38 @@ body{
     backdrop-filter: blur(3px);
 
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+    
 }
 
 #modal{
-    position:fixed;
-    height: 200px;
+    height: auto;
+    max-height: 90%;
     width: 50%;
+    max-width: 50%;
     background-color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    margin-top: 20px;
+    word-wrap: break-word;
+
+    overflow-y: auto;
+}
+
+#modal>p{
+    font-size: 25px;
+}
+
+#note-title{
+    font-size: 40px;
+    margin: 0px;
+}
+
+#exit-button{
+   margin-top:20px;
+   margin-bottom: 20px;
 }
